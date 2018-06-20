@@ -32,7 +32,7 @@ class Books(models.Model):
     pages = models.CharField(max_length=10, blank=True, null=True)
     date = models.CharField(max_length=5)
     count = models.PositiveIntegerField()
-    img_link = models.CharField(max_length=None)
+    img_link = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name_plural = "Books"
