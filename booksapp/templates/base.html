@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/resp.css' %}" />
+{#  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+{#  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+  <title>Books - Django</title>
+</head>
+ <body>
+     <header class="header">
+      <div class="header__inner">
+        <img class="header__logo" src="{% static 'images/header.jpg' %}" alt="iconic view of a books">
+        <h1 class="header__title">
+          Book Info
+        </h1>
+        <a id="menu" class="header__menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <nav id="drawer" class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#">News</a></li>
+        <li class="nav__item"><a href="#">Language</a></li>
+        <li class="nav__item"><a href="#">Authors</a></li>
+        <li class="nav__item"><a href="#">Size</a></li>
+      </ul>
+    </nav>
+{% block content %}
+{% endblock %}
+ <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
