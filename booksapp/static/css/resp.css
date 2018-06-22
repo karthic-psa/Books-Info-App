@@ -7,7 +7,7 @@
   display: none;
 }
 
-.hero, .top-news, .scores, .weather, .recent-news {
+.hero, .top-books, .must_reads, .recent-books {
   order: 10;
 }
 @media screen and (max-width: 400px){
@@ -63,13 +63,6 @@
     }
 }
 
-    @media screen and (min-width: 850px) {
-        main, .header__inner, .nav, .content {
-            width: 850px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
 @media screen and (max-width: 550px){
 div.contain{
   width: 100%;
@@ -82,8 +75,6 @@ div.contain{
 div.contain{
   display: none;
 }
-
-
 }
 
 @media screen and (min-width: 550px) {
@@ -96,4 +87,19 @@ div.contain{
     .hero {
         width: 50%;
     }
+    .top-books {
+    order: 1;
+    width: 50%;
+  }
+      .must_reads {
+    order: 2;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 850px) {
+  main, .header__inner, .nav, .content {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

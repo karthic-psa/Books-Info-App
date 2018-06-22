@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
         <main>
+
       <section class="content">
         <section class="hero">
           <article class="description">
@@ -8,11 +9,86 @@
             <p>The books that help you most are those which make you think that most. The hardest way of learning is that of easy reading; but a great book that comes from a great thinker is a ship of thought, deep freighted with truth and beauty.</p>
           </article>
         </section>
-      </section>
-    <ul>
-        {% for book in object_list %}
-            <li> {{ book.title }}</li>
-        {% endfor %}
-    </ul>
+
+            <section class="books top-books">
+          <h2 class="books__title">Top Books <a href="#" class="books__more">+ more</a></h2>
+          <ul>
+
+            <li class="top-books__item">
+              <a href="#">{{ object_list.1.title }}</a>
+            </li>
+
+            <li class="top-books__item">
+              <a href="#">{{ object_list.2.title }}</a>
+            </li>
+            <li class="top-books__item">
+              <a href="#">{{ object_list.3.title }}</a>
+            </li>
+            <li class="top-books__item">
+              <a href="#">{{ object_list.4.title }}</a>
+            </li>
+
+          </ul>
+        </section>
+                <section class="must_reads">
+          <div class="contain">
+          <table class="must_reads__table">
+            <thead>
+              <tr>
+                <th>Must Reads</th>
+                <th>Author</th>
+                <th>Country</th>
+                <th>Pages</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ random_books.1.title }}</td>
+                <td>{{ random_books.1.author }}</td>
+                <td>{{ random_books.1.country }}</td>
+                <td>{{ random_books.1.pages }}</td>
+                <td class="winner">{{ random_books.1.year }}</td>
+              </tr>
+              <tr>
+                <td>{{ random_books.2.title }}</td>
+                <td>{{ random_books.2.author }}</td>
+                <td>{{ random_books.2.country }}</td>
+                <td>{{ random_books.2.pages }}</td>
+                <td class="winner">{{ random_books.2.year }}</td>
+              </tr>
+              <tr>
+                <td>{{ random_books.3.title }}</td>
+                <td>{{ random_books.3.author }}</td>
+                <td>{{ random_books.3.country }}</td>
+                <td>{{ random_books.3.pages }}</td>
+                <td class="winner">{{ random_books.3.year }}</td>
+              </tr>
+              <tr>
+                <td>{{ random_books.4.title }}</td>
+                <td>{{ random_books.4.author }}</td>
+                <td>{{ random_books.4.country }}</td>
+                <td>{{ random_books.4.pages }}</td>
+                <td class="winner">{{ random_books.4.year }}</td>
+              </tr>
+              <tr>
+                <td>{{ random_books.5.title }}</td>
+                <td>{{ random_books.5.author }}</td>
+                <td>{{ random_books.5.country }}</td>
+                <td>{{ random_books.5.pages }}</td>
+                <td class="winner">{{ random_books.5.year }}</td>
+              </tr>
+
+            </tbody>
+          </table>
+          </div>
+        </section>
+          </section>
+{#    <ul>#}
+{#    <li>{{ object_list.1.title }}</li>#}
+{#        {% for i in random_books %}#}
+{#            <li>{{ i.author }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
         </main>
 {% endblock %}
