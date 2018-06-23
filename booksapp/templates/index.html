@@ -13,29 +13,33 @@
             <section class="books top-books">
           <h2 class="books__title">Top Books <a href="#" class="books__more">+ more</a></h2>
           <ul>
-
+            {% for book in object_list %}
             <li class="top-books__item">
-              <a href="#">{{ object_list.1.title }}</a>
+              <a href="#">{{ book.title }}</a>
             </li>
-
-            <li class="top-books__item">
-              <a href="#">{{ object_list.2.title }}</a>
-            </li>
-            <li class="top-books__item">
-              <a href="#">{{ object_list.3.title }}</a>
-            </li>
-            <li class="top-books__item">
-              <a href="#">{{ object_list.4.title }}</a>
-            </li>
-
+{##}
+{#            <li class="top-books__item">#}
+{#              <a href="#">{{ object_list.2.title }}</a>#}
+{#            </li>#}
+{#            <li class="top-books__item">#}
+{#              <a href="#">{{ object_list.3.title }}</a>#}
+{#            </li>#}
+{#            <li class="top-books__item">#}
+{#              <a href="#">{{ object_list.4.title }}</a>#}
+{#            </li>#}
+{#            <li class="top-books__item">#}
+{#              <a href="#">{{ object_list.5.title }}</a>#}
+{#            </li>#}
+            {% endfor %}
           </ul>
         </section>
                 <section class="must_reads">
+                     <h2 class="must_reads_h2">Must Reads</h2>
           <div class="contain">
           <table class="must_reads__table">
             <thead>
               <tr>
-                <th>Must Reads</th>
+                <th>Title</th>
                 <th>Author</th>
                 <th>Country</th>
                 <th>Pages</th>
@@ -43,51 +47,200 @@
               </tr>
             </thead>
             <tbody>
+            {% for rbook in random_books %}
               <tr>
-                <td>{{ random_books.1.title }}</td>
-                <td>{{ random_books.1.author }}</td>
-                <td>{{ random_books.1.country }}</td>
-                <td>{{ random_books.1.pages }}</td>
-                <td class="winner">{{ random_books.1.year }}</td>
+                <td>{{ rbook.title }}</td>
+                <td>{{ rbook.author }}</td>
+                <td>{{ rbook.country }}</td>
+                <td>{{ rbook.pages }}</td>
+                <td class="rbook_year">{{ rbook.year }}</td>
               </tr>
-              <tr>
-                <td>{{ random_books.2.title }}</td>
-                <td>{{ random_books.2.author }}</td>
-                <td>{{ random_books.2.country }}</td>
-                <td>{{ random_books.2.pages }}</td>
-                <td class="winner">{{ random_books.2.year }}</td>
-              </tr>
-              <tr>
-                <td>{{ random_books.3.title }}</td>
-                <td>{{ random_books.3.author }}</td>
-                <td>{{ random_books.3.country }}</td>
-                <td>{{ random_books.3.pages }}</td>
-                <td class="winner">{{ random_books.3.year }}</td>
-              </tr>
-              <tr>
-                <td>{{ random_books.4.title }}</td>
-                <td>{{ random_books.4.author }}</td>
-                <td>{{ random_books.4.country }}</td>
-                <td>{{ random_books.4.pages }}</td>
-                <td class="winner">{{ random_books.4.year }}</td>
-              </tr>
-              <tr>
-                <td>{{ random_books.5.title }}</td>
-                <td>{{ random_books.5.author }}</td>
-                <td>{{ random_books.5.country }}</td>
-                <td>{{ random_books.5.pages }}</td>
-                <td class="winner">{{ random_books.5.year }}</td>
-              </tr>
-
+{#              <tr>#}
+{#                <td>{{ random_books.2.title }}</td>#}
+{#                <td>{{ random_books.2.author }}</td>#}
+{#                <td>{{ random_books.2.country }}</td>#}
+{#                <td>{{ random_books.2.pages }}</td>#}
+{#                <td class="winner">{{ random_books.2.year }}</td>#}
+{#              </tr>#}
+{#              <tr>#}
+{#                <td>{{ random_books.3.title }}</td>#}
+{#                <td>{{ random_books.3.author }}</td>#}
+{#                <td>{{ random_books.3.country }}</td>#}
+{#                <td>{{ random_books.3.pages }}</td>#}
+{#                <td class="winner">{{ random_books.3.year }}</td>#}
+{#              </tr>#}
+{#              <tr>#}
+{#                <td>{{ random_books.4.title }}</td>#}
+{#                <td>{{ random_books.4.author }}</td>#}
+{#                <td>{{ random_books.4.country }}</td>#}
+{#                <td>{{ random_books.4.pages }}</td>#}
+{#                <td class="winner">{{ random_books.4.year }}</td>#}
+{#              </tr>#}
+{#              <tr>#}
+{#                <td>{{ random_books.5.title }}</td>#}
+{#                <td>{{ random_books.5.author }}</td>#}
+{#                <td>{{ random_books.5.country }}</td>#}
+{#                <td>{{ random_books.5.pages }}</td>#}
+{#                <td class="winner">{{ random_books.5.year }}</td>#}
+{#              </tr>#}
+{#              <tr>#}
+{#                <td>{{ random_books.6.title }}</td>#}
+{#                <td>{{ random_books.6.author }}</td>#}
+{#                <td>{{ random_books.6.country }}</td>#}
+{#                <td>{{ random_books.6.pages }}</td>#}
+{#                <td class="winner">{{ random_books.6.year }}</td>#}
+{#              </tr>#}
+            {% endfor %}
             </tbody>
           </table>
           </div>
         </section>
+          <section class="english">
+{#          <span class="english__location">English Books</span>#}
+{#          <span class="english__desc">{{ english_books.1.title }}</span>#}
+{#          <span class="english__today">#}
+{#              <img class="english__today__image" src="static/{{ english_books.1.imageLink }}" alt="{{ english_books.1.title }}"><span class="english__today__temp">By:</span><span class="english__today__deg">{{ english_books.1.author }}</span>#}
+{#          </span>#}
+{#          <ul class="english__next">#}
+{#            <li class="english__next__item">#}
+{#              <span>Tues</span>#}
+{#              <img class="english__next__image" src="static/{{ english_books.3.imageLink }}" alt="icon of a cloudy day">#}
+{#              <span>13 &deg;C</span>#}
+{#            </li><li class="english__next__item">#}
+{#              <span>Wed</span>#}
+{#              <img class="english__next__image" src="static/{{ english_books.4.imageLink }}" alt="icon of a cloudy day">#}
+{#              <span>13 &deg;C</span>#}
+{#            </li><li class="english__next__item">#}
+{#              <span>Thu</span>#}
+{#              <img class="english__next__image" src="static/{{ english_books.5.imageLink }}" alt="icon of a rainy day">#}
+{#              <span>13 &deg;C</span></li>#}
+{#          </ul>#}
+ <h2 class="must_reads_h2">Books Slideshow</h2>
+
+<div class="books_container">
+    {% for rbook in random_books %}
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img class = "img__align" src="static/{{ rbook.imageLink }}" style="width:100%">
+  </div>
+    {% endfor %}
+{#  <div class="mySlides">#}
+{#    <div class="numbertext">2 / 6</div>#}
+{#    <img class = "img__align" src="static/{{ random_books.2.imageLink }}" style="width:100%">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <div class="numbertext">3 / 6</div>#}
+{#    <img class = "img__align" src="static/{{ random_books.3.imageLink }}" style="width:100%">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <div class="numbertext">4 / 6</div>#}
+{#    <img class = "img__align" src="static/{{ random_books.4.imageLink }}" style="width:100%">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <div class="numbertext">5 / 6</div>#}
+{#    <img class = "img__align" src="static/{{ random_books.5.imageLink }}" style="width:100%">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <div class="numbertext">6 / 6</div>#}
+{#    <img class = "img__align" src="static/{{ random_books.6.imageLink }}" style="width:100%">#}
+{#  </div>#}
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row_book_slider">
+      {% for rbook in random_books %}
+    <div class="column">
+      <img class="demo cursor" src="static/{{ rbook.imageLink }}" style="width:100%" onclick="currentSlide(1)" alt="{{ rbook.title }}">
+    </div>
+      {% endfor %}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="static/{{ random_books.2.imageLink }}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="static/{{ random_books.3.imageLink }}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="static/{{ random_books.4.imageLink }}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="static/{{ random_books.5.imageLink }}" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="static/{{ random_books.6.imageLink }}" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">#}
+{#    </div>#}
+  </div>
+</div>
+
+        </section>
+                  <section class="books recent-books">
+          <h2 class="books__title">Latest Books <a href="#" class="books__more">+ more</a></h2>
+          <ul>
+              {% for i in latest_books %}
+            <li class="snippet">
+              <img class="snippet__thumbnail" src="static/{{ i.imageLink }}" alt="picture of a girl with a large, stuffed dog toy">
+              <h3 class="snippet__title open_BookDialog" data-toggle="modal" data-target="#myModel">{{ i.title }}</h3>
+              <p>Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.
+              Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.
+              </p>
+            </li>
+              {% endfor %}
+{#            <li class="snippet">#}
+{#              <img class="snippet__thumbnail" src="static/{{ latest_books.2.imageLink }}" alt="picture of a girl with a large, stuffed dog toy">#}
+{#              <h3 class="snippet__title"><a href="#" class="open-BookDialog">{{ latest_books.2.title }}</a></h3>#}
+{#              <p>Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice loko.#}
+{#              </p>#}
+{#            </li>#}
+{#            <li class="snippet">#}
+{#              <img class="snippet__thumbnail" src="static/{{ latest_books.3.imageLink }}" alt="picture of a girl with a large, stuffed dog toy">#}
+{#              <h3 class="snippet__title"><a href="#">{{ latest_books.3.title }}</a></h3>#}
+{#              <p>Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.#}
+{#              Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko.#}
+{#              </p>#}
+{#            </li>#}
+{#            <li class="snippet">#}
+{#              <img class="snippet__thumbnail" src="static/{{ latest_books.4.imageLink }}" alt="picture of a girl with a large, stuffed dog toy">#}
+{#              <h3 class="snippet__title"><a href="#">{{ latest_books.4.title }}</a></h3>#}
+{#              <p>Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.#}
+{#              Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko.#}
+{#              </p>#}
+{#            </li>#}
+          </ul>
+        </section>
           </section>
+{#            /*Modal*/#}
+                    <div class="modal fade" id="myModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <article>
+                            <img class="img-responsive" src="" alt="Description of the movie trailer website project">
+                            <br />
+                            <h4>Decription:</h4>
+                            <br />
+                            <p class="text-justify"> Server-side code written in Python to store a list of my favorite movies, including box art imagery and a movie trailer URL. This data is then served to a web page using HTML and CSS allowing visitors to review these movies and watch the trailers.</p>
+                        </article>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 {#    <ul>#}
-{#    <li>{{ object_list.1.title }}</li>#}
-{#        {% for i in random_books %}#}
-{#            <li>{{ i.author }}</li>#}
+{#        {% for i in latest_books %}#}
+{#            <li>{{ i.title }}</li>#}
 {#        {% endfor %}#}
 {#    </ul>#}
         </main>

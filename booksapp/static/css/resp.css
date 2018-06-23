@@ -7,7 +7,7 @@
   display: none;
 }
 
-.hero, .top-books, .must_reads, .recent-books {
+.hero, .top-books, .must_reads, .recent-books, .english {
   order: 10;
 }
 @media screen and (max-width: 400px){
@@ -28,7 +28,7 @@
 
     .nav {
         z-index: 10;
-        background-color: #fff;
+        /*background-color: #fff;*/
         width: 300px;
         position: absolute;
         /* This trasform moves the drawer off canvas. */
@@ -36,11 +36,13 @@
         transform: translate(-300px, 0);
         /* Optionally, we animate the drawer. */
         transition: transform 0.3s ease;
+        margin-top: 0px;
     }
 
     .nav.open {
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
+        margin-top: 0px;
     }
 
     .nav__item {
@@ -76,29 +78,43 @@ div.contain{
   display: none;
 }
 }
+@media screen and (max-width: 7200px){
+        .hero {
+        background-image: url("../images/bookshero_small.jpg")
+    }
+}
 
 @media screen and (min-width: 550px) {
     .hero {
         order: 0;
         width: 60%;
     }
+      .top-books {
+    order: 1;
+    width: 40%;
+  }
 }
 @media screen and (min-width: 700px) {
     .hero {
-        width: 50%;
+        width: 65%;
     }
     .top-books {
     order: 1;
-    width: 50%;
+    width: 35%;
   }
       .must_reads {
     order: 2;
-    width: 60%;
+    width: 50%;
+  }
+        .english {
+    order: 3;
+            width: 50%;
+
   }
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1140px) {
   main, .header__inner, .nav, .content {
-    width: 850px;
+    width: 1140px;
     margin-left: auto;
     margin-right: auto;
   }

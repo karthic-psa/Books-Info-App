@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+<script>
+
+</script>
+{% block content %}
+
+    <div class="container">
+      {% for book in object_list %}
+<div class="col-md-6 col-lg-4 movie-tile text-center">
+    <img src="../static/{{ book.imageLink }}" width="220" height="342">
+    <h2 class="h2 all_books_title">{{ book.title }}</h2>
+</div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

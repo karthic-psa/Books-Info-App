@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/resp.css' %}" />
-{#  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-{#  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/allbooks.css' %}" />
   <title>Books - Django</title>
 </head>
  <body>
@@ -27,16 +27,28 @@
       </div>
     </header>
 
-    <nav id="drawer" class="nav">
+    <nav id="drawer" class="nav carbon">
       <ul class="nav__list">
-        <li class="nav__item"><a href="#">News</a></li>
+        <li class="nav__item"><a href="{% url 'index' %}" title="HOME">Home</a></li>
         <li class="nav__item"><a href="#">Language</a></li>
         <li class="nav__item"><a href="#">Authors</a></li>
-        <li class="nav__item"><a href="#">Size</a></li>
+        <li class="nav__item" id="all_books"><a href="{% url 'all_books' %}">All Books</a></li>
       </ul>
     </nav>
 {% block content %}
 {% endblock %}
+      <footer>
+        <div class="content_footer">
+            <div class="quote"><i class="fa fa-quote-left"></i> Logic will get you from A to B. Imagination will take you everywhere.<i class="fa fa-quote-right"></i>
+                <br><span class="attribution">&mdash; Albert Einstein</span></div>
+            <div class="copyright">&copy; 2017, Srinivasa Karthic Ponguru</div>
+            <div class="credits">&bull; Developed by Srinivasa Karthic Ponguru &bull;</div>
+            <div class="thanks">Thanks for visiting!</div>
+        </div>
+    </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
 </body>
 </html>
