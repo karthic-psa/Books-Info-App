@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <main>
+    <ul class="list-group mb-4">
+      {% for i,j in books_cnt %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="#">{{ i }}</a>
+          <span class="badge badge-primary badge-pill"><a href="#" class="badge badge-secondary">Total Books: {{ j }}</a></span>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <ul>
+        {% for i,j in tcnt_list %}
+            <h2>{{ i.j.id }}</h2>
+        {% endfor %}
+    </ul>
+{##}
+{#    <h2>{{ test_list }}</h2>#}
+{#    <h2>{{ tcnt_list }}</h2>#}
+{#       <ul>#}
+{#        {% for i in tcnt_list %}#}
+{#            <h2>{{ i.id }}</h2>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+    </main>
+{% endblock %}

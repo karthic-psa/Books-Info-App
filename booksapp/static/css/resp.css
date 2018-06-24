@@ -78,7 +78,7 @@ div.contain{
   display: none;
 }
 }
-@media screen and (max-width: 7200px){
+@media screen and (max-width: 720px){
         .hero {
         background-image: url("../images/bookshero_small.jpg")
     }
