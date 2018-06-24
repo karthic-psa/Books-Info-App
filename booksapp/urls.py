@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^all_books/', views.BooksView.as_view(), name='all_books'),
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='details'),
     url(r'^language/', views.LanguageView.as_view(), name='language'),
+    url(r'^author/', views.AuthorView.as_view(), name='author'),
     url(r'^(?P<language>[a-zA-Z0-9!@#$&()\-`.+, ]*)/$', views.LanguageDetailView.as_view(), name='book_lang'),
 ]

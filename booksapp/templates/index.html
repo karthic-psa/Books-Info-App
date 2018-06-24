@@ -47,7 +47,7 @@
               </tr>
             </thead>
             <tbody>
-            {% for rbook in random_books %}
+            {% for rbook,j in random_books %}
               <tr>
                 <td>{{ rbook.title }}</td>
                 <td>{{ rbook.author }}</td>
@@ -118,7 +118,7 @@
  <h2 class="must_reads_h2">Books Slideshow</h2>
 
 <div class="books_container">
-    {% for rbook in random_books %}
+    {% for rbook,j in random_books %}
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
     <img class = "img__align" src="static/{{ rbook.imageLink }}" style="width:100%">
@@ -157,9 +157,9 @@
   </div>
 
   <div class="row_book_slider">
-      {% for rbook in random_books %}
+      {% for rbook,j in random_books %}
     <div class="column">
-      <img class="demo cursor" src="static/{{ rbook.imageLink }}" style="width:100%" onclick="currentSlide(1)" alt="{{ rbook.title }}">
+      <img class="demo cursor" src="static/{{ rbook.imageLink }}" style="width:100%" onclick="currentSlide({{ j }})" alt="{{ rbook.title }}">
     </div>
       {% endfor %}
 {#    <div class="column">#}

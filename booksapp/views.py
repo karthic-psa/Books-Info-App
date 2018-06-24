@@ -23,13 +23,14 @@ class IndexView(generic.ListView):
     def get_context_data(self, **kwargs):
         r = random.sample(range(1, (len(Books.objects.all()))), 6)
         lb = len(Books.objects.all())
+        cnt = [i for i in range(len(r))]
         # lb = random.sample(range(1,5), 6)
         # l = []
         # for i in r:
         #     l.append(Books.objects.filter(pk__in=r))
         context = super(IndexView, self).get_context_data(**kwargs)
         context.update({
-            'random_books': Books.objects.filter(pk__in=r),
+            'random_books': zip(Books.objects.filter(pk__in=r), cnt),
             'english_books': Books.objects.filter(language='English')[:6],
             'latest_books':  Books.objects.order_by('year')[lb-5:lb],
         })
@@ -71,6 +72,25 @@ class LanguageView(generic.ListView):
         return [definition.encode("utf8") for definition in Books.objects.values_list('language', flat=True).distinct().order_by('language')]
         # tarr=set(l)
         # return tarr
+
+
+class AuthorView(generic.ListView):
+    template_name = 'author.html'
+
+    def get_context_data(self, **kwargs):
+        a = [definition.encode("utf8") for definition in Books.objects.values_list('author', flat=True).distinct().order_by('author')]
+        acnt=[]
+        count=[i for i in range(len(a))]
+        for i in range(len(a)):
+            acnt.append(Books.objects.filter(author=a[i]).count())
+        context = super(AuthorView, self).get_context_data(**kwargs)
+        context.update({
+            'author_cnt': zip(a, acnt),
+        })
+        return context
+
+    def get_queryset(self):
+        return [definition.encode("utf8") for definition in Books.objects.values_list('author', flat=True).distinct().order_by('author')]
 
 
 class DetailView(generic.DetailView):
