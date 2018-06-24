@@ -23,7 +23,7 @@ class IndexView(generic.ListView):
     def get_context_data(self, **kwargs):
         r = random.sample(range(1, (len(Books.objects.all()))), 6)
         lb = len(Books.objects.all())
-        cnt = [i for i in range(len(r))]
+        cnt = [i for i in range(1,len(r)+1)]
         # lb = random.sample(range(1,5), 6)
         # l = []
         # for i in r:

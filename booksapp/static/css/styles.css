@@ -31,6 +31,8 @@ h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
+
+
 header, nav, footer, section, article, div {
   box-sizing: border-box;
 }
@@ -155,6 +157,8 @@ main {
   width: 100%;
   color: #fff;
   padding: 1em;
+        overflow: hidden;
+    text-overflow: ellipsis;
 }
 /*
  *
@@ -450,6 +454,7 @@ img {
 .snippet {
   clear: both;
   margin: 24px 0;
+    color: wheat;
 
 }
 
@@ -463,6 +468,11 @@ img {
 .snippet__title {
   font-weight: 500;
     color: white;
+}
+
+.snippet_text_align{
+        text-align: justify;
+    text-justify: inter-word;
 }
 
 .snippet__title a {
@@ -512,3 +522,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     margin-top: 1rem;
     font-size: 1.4rem;
   }
+.center_img{
+        margin-left: auto;
+    margin-right: auto;
+}

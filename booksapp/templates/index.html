@@ -120,7 +120,7 @@
 <div class="books_container">
     {% for rbook,j in random_books %}
   <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
+    <div id="num" class="numbertext"></div>
     <img class = "img__align" src="static/{{ rbook.imageLink }}" style="width:100%">
   </div>
     {% endfor %}
@@ -185,10 +185,10 @@
           <h2 class="books__title">Latest Books <a href="#" class="books__more">+ more</a></h2>
           <ul>
               {% for i in latest_books %}
-            <li class="snippet">
+            <li class="snippet open_BookDialog" data-toggle="modal" data-target="#myModel">
               <img class="snippet__thumbnail" src="static/{{ i.imageLink }}" alt="picture of a girl with a large, stuffed dog toy">
-              <h3 class="snippet__title open_BookDialog" data-toggle="modal" data-target="#myModel">{{ i.title }}</h3>
-              <p>Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.
+              <h3 class="snippet__title">{{ i.title }}</h3>
+              <p class="snippet_text_align">Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.
               Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.
               </p>
             </li>
@@ -217,7 +217,7 @@
         </section>
           </section>
 {#            /*Modal*/#}
-                    <div class="modal fade" id="myModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -225,15 +225,16 @@
                     </div>
                     <div class="modal-body">
                         <article>
-                            <img class="img-responsive" src="" alt="Description of the movie trailer website project">
+                            <img id="modalImage" class="img-responsive center_img" src="" alt="Description of the movie trailer website project">
                             <br />
                             <h4>Decription:</h4>
                             <br />
-                            <p class="text-justify"> Server-side code written in Python to store a list of my favorite movies, including box art imagery and a movie trailer URL. This data is then served to a web page using HTML and CSS allowing visitors to review these movies and watch the trailers.</p>
+                            <p id="book_desc" class="text-justify"> Server-side code written in Python to store a list of my favorite movies, including box art imagery and a movie trailer URL. This data is then served to a web page using HTML and CSS allowing visitors to review these movies and watch the trailers.</p>
                         </article>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a href="#" class="open_details">Full Details</a></button>
                     </div>
                 </div>
             </div>
