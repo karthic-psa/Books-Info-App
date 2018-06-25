@@ -120,3 +120,51 @@ $(document).ready(function() {
 
   });
 });
+function searchFunction() {
+    let input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("books_ul");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("h2")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+}
+function searchFunctionLang() {
+    let input, filter, ul, li, a, i;
+    input = document.getElementById("myInputLang");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("langList");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+}
+function searchFunctionAuth() {
+    let input, filter, ul, li, a, i;
+    input = document.getElementById("myInputAuth");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("authList");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+}

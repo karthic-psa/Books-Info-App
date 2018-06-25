@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
     <main>
-    <ul class="list-group mb-4">
+            <div class="search_box">
+    <input type="text" id="myInputAuth" onkeyup="searchFunctionAuth()" placeholder="Search Books..." title="Type in a name">
+    </div>
+    <ul class="list-group mb-4" id="authList">
       {% for i,j in author_cnt %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="#">{{ i }}</a>

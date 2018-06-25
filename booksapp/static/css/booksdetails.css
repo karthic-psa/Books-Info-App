@@ -1,0 +1,88 @@
+.text-for-header{
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+.margin-top{
+    padding-top: 15px;
+}
+.skill-box-margin {
+    margin-top: 2rem;
+}
+.skills {} .skill-cardstyle-inital {
+    border-top-width: 0.35714rem;
+    border-top-style: solid;
+    border-top-color: #02b3e4;
+    position: relative;
+    text-align: center;
+}
+.skill-cardstyle-later {
+    position: relative;
+    text-align: center;
+}
+.skill-box-skill {
+    font-size: 1.6rem;
+    color: #7d97ad;
+    display: inline-block;
+    margin-right: 1.42857rem;
+    margin-bottom: 0.92857rem;
+}
+.skill-level-bar {
+    display: inline-block;
+    position: relative;
+    height: 11px;
+    margin-right: 5px;
+    top: 1px;
+    width: 10px;
+}
+.skill-level-bar-1 {
+    position: absolute;
+    background-color: #7d97ad;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+}
+.skill-level-bar-unshaded {
+    background-color: #dbe2e8;
+}
+.skill-level-bar-shaded {
+    background-color: #7d97ad;
+}
+.skill-level-bar-2 {
+    position: absolute;
+    height: 8px;
+    left: 4px;
+    bottom: 0;
+    width: 2px;
+}
+.skill-level-bar-3 {
+    position: absolute;
+    height: 11px;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+}
+.card-style-card + .card-style-card {
+    margin-top: 1.42857rem;
+}
+.card-style-card {} .card-style-card-2 {} .card-style-card-base {
+    background: #ffffffc9;
+    border-radius: 1rem;
+    box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.card-style-section-base {
+    margin: 0 auto;
+    /* max-width: 61.42857rem;*/
+
+    max-width: 100%;
+}
+.card-padding {
+    padding: 2.85714rem;
+}
+        #bookdetail{
+        text-align: justify;
+    text-justify: inter-word;
+}

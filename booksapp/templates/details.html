@@ -1,4 +1,79 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/detailspage.js' %}"></script>
+{% endblock %}
 {% block content %}
-    <h2>{{ books.title }}</h2>
+    <main>
+    <h3 id="btitle" class="text-for-header margin-top">{{ books.title }}</h3>
+    <img id="books_all_Image" class="img-responsive center_img" src="../static/{{ books.imageLink }}" alt="Description of the movie trailer website project">
+            <div class="row">
+            <div class="col-md-12">
+                <div class="skill-box-margin">
+                    <h3 id="skill" class="text-for-header">About the Book</h3>
+                    <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-inital">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Title</h4>
+                            </div>
+                            <div class="col-md-8">
+                                {{ books.title }}
+                             </div>
+                        </div>
+                    </div>
+                    <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Author</h4>
+                            </div>
+                            <div class="col-md-8">
+                                {{ books.author }}
+                            </div>
+                        </div>
+                    </div>
+                     <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Description</h4>
+                            </div>
+                            <div class="col-md-8">
+                                <p id="bookdetail"></p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Language</h4>
+                            </div>
+                            <div class="col-md-8">
+                                {{ books.language }}
+                            </div>
+                        </div>
+                    </div>
+                     <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Number of Pages</h4>
+                            </div>
+                            <div class="col-md-8">
+                                {{ books.pages }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Year</h4>
+                            </div>
+                            <div class="col-md-8">
+                                {{ books.year }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </main>
+
 {% endblock %}

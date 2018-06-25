@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <main>
+    <div class="search_box">
+    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search Books..." title="Type in a name">
+    </div>
+    </main>
     <div class="container">
+<ul id="books_ul">
       {% for book in object_list %}
-<div class="col-md-6 col-lg-4 movie-tile text-center">
+<li class="col-md-6 col-lg-4 movie-tile text-center" id="allBooks_show">
 <a href="{% url 'details' book.id %}">
     <img src="../static/{{ book.imageLink }}" width="220" height="342">
     <h2 class="h2 all_books_title">{{ book.title }}</h2>
 </a>
-</div>
+</li>
     {% endfor %}
+</ul>
     </div>
 
 {% endblock %}

@@ -15,7 +15,8 @@
           <ul>
             {% for book in object_list %}
             <li class="top-books__item">
-              <a href="#">{{ book.title }}</a>
+              <a href="{% url 'details' book.id %}">{{ book.title }}</a>
+                <a href="{% url 'details' book.id %}"><i class="fa fa-book al_right"></i></a>
             </li>
 {##}
 {#            <li class="top-books__item">#}
