@@ -14,7 +14,7 @@
 
 }
 
-@media screen and (max-width: 549px) {
+@media screen and (max-width: 659px) {
     .header__logo {
         height: 48px;
         margin: 0.5em;
@@ -84,7 +84,7 @@ div.contain{
     }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 591px) {
     .hero {
         order: 0;
         width: 60%;

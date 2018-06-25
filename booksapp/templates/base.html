@@ -14,9 +14,9 @@
   <title>Books - Django</title>
 </head>
  <body>
-     <header class="header">
+     <header class="header" id="mainHeader">
       <div class="header__inner">
-        <img class="header__logo" src="{% static 'images/header.jpg' %}" alt="iconic view of a books">
+        <img class="header__logo" src="{% static 'images/newbw.jpg' %}" alt="iconic view of a books">
         <h1 class="header__title">
           Book Info
         </h1>
@@ -31,8 +31,8 @@
     <nav id="drawer" class="nav carbon">
       <ul class="nav__list">
         <li class="nav__item {% if url_name == 'index' %}active{% endif %}"><a href="{% url 'index' %}" title="HOME">Home</a></li>
-        <li class="nav__item {% if url_name == 'language' %}active{% endif %}"><a href="{% url 'language' %}">Languages</a></li>
-        <li class="nav__item {% if url_name == 'author' %}active{% endif %}"><a href="{% url 'author' %}">Authors</a></li>
+        <li class="nav__item {% if url_name == 'language' %}active{% endif %}"><a href="{% url 'language' %}">Language</a></li>
+        <li class="nav__item {% if url_name == 'author' %}active{% endif %}"><a href="{% url 'author' %}">Author</a></li>
         <li class="nav__item {% if url_name == 'all_books' %}active{% endif %}" id="all_books"><a href="{% url 'all_books' %}">All Books</a></li>
       </ul>
     </nav>
@@ -43,6 +43,7 @@
   <a href="{% url 'author' %}" id="projects">Authors</a>
   <a href="{% url 'all_books' %}" id="contact">All Books</a>
 </div>
+
 
 {% block content %}
 {% endblock %}
