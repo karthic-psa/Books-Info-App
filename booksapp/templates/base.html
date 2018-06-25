@@ -18,7 +18,7 @@
       <div class="header__inner">
         <img class="header__logo" src="{% static 'images/newbw.jpg' %}" alt="iconic view of a books">
         <h1 class="header__title">
-          Book Info
+          Book INFO
         </h1>
         <a id="menu" class="header__menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -30,10 +30,10 @@
 
     <nav id="drawer" class="nav carbon">
       <ul class="nav__list">
-        <li class="nav__item {% if url_name == 'index' %}active{% endif %}"><a href="{% url 'index' %}" title="HOME">Home</a></li>
-        <li class="nav__item {% if url_name == 'language' %}active{% endif %}"><a href="{% url 'language' %}">Language</a></li>
-        <li class="nav__item {% if url_name == 'author' %}active{% endif %}"><a href="{% url 'author' %}">Author</a></li>
-        <li class="nav__item {% if url_name == 'all_books' %}active{% endif %}" id="all_books"><a href="{% url 'all_books' %}">All Books</a></li>
+        <li class="nav__item"><a href="{% url 'index' %}" title="HOME" class="{% if "/" == request.path %}active{% endif %}">Home</a></li>
+        <li class="nav__item"><a href="{% url 'language' %}" class="{% if "/language/" == request.path %}active{% endif %}">Language</a></li>
+        <li class="nav__item"><a href="{% url 'author' %}" class="{% if "/author/" == request.path %}active{% endif %}">Author</a></li>
+        <li class="nav__item" id="all_books"><a href="{% url 'all_books' %}" class="{% if '/all_books/' == request.path %}active{% endif %}">All Books</a></li>
       </ul>
     </nav>
 

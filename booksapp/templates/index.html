@@ -187,10 +187,9 @@
           <ul>
               {% for i in latest_books %}
             <li class="snippet open_BookDialog" data-toggle="modal" data-target="#myModel">
-              <img class="snippet__thumbnail" src="static/{{ i.imageLink }}" alt="picture of a girl with a large, stuffed dog toy">
-              <h3 class="snippet__title">{{ i.title }}</h3>
-              <p class="snippet_text_align">Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.
-              Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.
+              <img class="snippet__thumbnail" src="static/{{ i.imageLink }}" alt="{{ i.title }}">
+              <h3 class="snippet__title" id="bname">{{ i.title }}</h3><h5 id="bauth">by: {{ i.author }}</h5>
+              <p class="snippet_text_align">Description Loading...
               </p>
             </li>
               {% endfor %}

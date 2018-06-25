@@ -3,7 +3,8 @@ import random
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from models import Books
-
+from rest_framework.viewsets import ModelViewSet
+from serializers import BooksViewSet
 
 # with open('books.json') as json_data:
 #     b = json.load(json_data)
@@ -12,6 +13,10 @@ from models import Books
 # booksSaver = BooksSerializer(data=b, many=True)
 # if booksSaver.is_valid():
 #     booksSaver.save()
+
+class BooksViewSet(ModelViewSet):
+    queryset = Books.objects.all().order_by('title')
+    serializer_class = BooksViewSet
 
 
 class IndexView(generic.ListView):
@@ -109,3 +114,6 @@ class LanguageDetailView(generic.DetailView):
         for i in range(len(l)):
             tcnt.append([Books.objects.filter(language=l[i])])
         return tcnt
+
+
+
