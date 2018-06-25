@@ -86,3 +86,10 @@
         text-align: justify;
     text-justify: inter-word;
 }
+        .spacing{
+            margin-top: 15px;
+        }
+
+        .right_al{
+            float: right;
+        }

@@ -11,7 +11,7 @@
         </section>
 
             <section class="books top-books">
-          <h2 class="books__title">Top Books <a href="#" class="books__more">+ more</a></h2>
+          <h2 class="books__title">Top Books <a href="{% url 'all_books' %}" class="books__more text_col1">+ more</a></h2>
           <ul>
             {% for book in object_list %}
             <li class="top-books__item">
@@ -50,7 +50,7 @@
             <tbody>
             {% for rbook,j in random_books %}
               <tr>
-                <td>{{ rbook.title }}</td>
+                  <td><a href="{% url 'details' rbook.id %}" class="text_col">{{ rbook.title }}</a></td>
                 <td>{{ rbook.author }}</td>
                 <td>{{ rbook.country }}</td>
                 <td>{{ rbook.pages }}</td>
@@ -122,7 +122,7 @@
     {% for rbook,j in random_books %}
   <div class="mySlides">
     <div id="num" class="numbertext"></div>
-    <img class = "img__align" src="static/{{ rbook.imageLink }}" style="width:100%">
+      <a href="{% url 'details' rbook.id %}"><img class = "img__align" src="static/{{ rbook.imageLink }}" style="width:100%"></a>
   </div>
     {% endfor %}
 {#  <div class="mySlides">#}
@@ -183,7 +183,7 @@
 
         </section>
                   <section class="books recent-books">
-          <h2 class="books__title">Latest Books <a href="#" class="books__more">+ more</a></h2>
+          <h2 class="books__title">Latest Books <a href="{% url 'all_books' %}" class="books__more text_col1">+ more</a></h2>
           <ul>
               {% for i in latest_books %}
             <li class="snippet open_BookDialog" data-toggle="modal" data-target="#myModel">

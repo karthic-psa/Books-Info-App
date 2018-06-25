@@ -2,7 +2,7 @@
 {% block content %}
     <main>
             <div class="search_box">
-    <input type="text" id="myInputAuth" onkeyup="searchFunctionAuth()" placeholder="Search Books..." title="Type in a name">
+    <input type="text" id="myInputAuth" onkeyup="searchFunctionAuth()" placeholder="Search Authors..." title="Type in a name">
     </div>
     <ul class="list-group mb-4" id="authList">
       {% for i,j in author_cnt %}
@@ -22,4 +22,5 @@
 {#        {% endfor %}#}
 {#    </ul>#}
     </main>
+
 {% endblock %}

@@ -168,3 +168,16 @@ function searchFunctionAuth() {
         }
     }
 }
+
+window.addEventListener('scroll', myFunction);
+
+let navbar = document.getElementById("drawer");
+let sticky = navbar.offsetTop;
+let snav = document.getElementById('mySidenav');
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    snav.classList.remove("stick_side")
+  } else {
+    snav.classList.add("stick_side");
+  }
+}

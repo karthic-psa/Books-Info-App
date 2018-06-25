@@ -30,12 +30,20 @@
 
     <nav id="drawer" class="nav carbon">
       <ul class="nav__list">
-        <li class="nav__item"><a href="{% url 'index' %}" title="HOME">Home</a></li>
-        <li class="nav__item"><a href="{% url 'language' %}">Language</a></li>
-        <li class="nav__item"><a href="{% url 'author' %}">Authors</a></li>
-        <li class="nav__item" id="all_books"><a href="{% url 'all_books' %}">All Books</a></li>
+        <li class="nav__item {% if url_name == 'index' %}active{% endif %}"><a href="{% url 'index' %}" title="HOME">Home</a></li>
+        <li class="nav__item {% if url_name == 'language' %}active{% endif %}"><a href="{% url 'language' %}">Languages</a></li>
+        <li class="nav__item {% if url_name == 'author' %}active{% endif %}"><a href="{% url 'author' %}">Authors</a></li>
+        <li class="nav__item {% if url_name == 'all_books' %}active{% endif %}" id="all_books"><a href="{% url 'all_books' %}">All Books</a></li>
       </ul>
     </nav>
+
+     <div id="mySidenav" class="sidenav stick_side">
+  <a href="{% url 'index' %}" id="about">Home</a>
+  <a href="{% url 'language' %}" id="blog">Languages</a>
+  <a href="{% url 'author' %}" id="projects">Authors</a>
+  <a href="{% url 'all_books' %}" id="contact">All Books</a>
+</div>
+
 {% block content %}
 {% endblock %}
       <footer>
