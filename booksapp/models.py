@@ -6,22 +6,6 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 from django.db import models
 from django.urls import reverse
-from django.utils import timezone
-
-#
-# class Language(models.Model):
-#     name = models.CharField(max_length=60)
-#     group = models.ForeignKey(Group, on_delete=models.CASCADE)
-#     slug = models.SlugField(default='', )
-#
-#     class Meta:
-#         ordering = ["name"]
-#         verbose_name_plural = "Languages"
-#         unique_together = ("group", "slug")
-#
-#     def __str__(self):
-#         return self.name
-#
 
 
 class Books(models.Model):
@@ -42,8 +26,8 @@ class Books(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse('task_detail', kwargs={'task_id': self.id, })
+    def get_absolute_url(self):
+        return reverse('details', kwargs={'pk': self.id, })
 
 
 

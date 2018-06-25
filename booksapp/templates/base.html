@@ -5,62 +5,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/booksdetails.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/booksdetails.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/resp.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/allbooks.css' %}" />
   <title>Books - Django</title>
 </head>
  <body>
      <header class="header" id="mainHeader">
-      <div class="header__inner">
-        <img class="header__logo" src="{% static 'images/newbw.jpg' %}" alt="iconic view of a books">
-        <h1 class="header__title">
-          Book INFO
-        </h1>
-        <a id="menu" class="header__menu">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
-          </svg>
-        </a>
-      </div>
-    </header>
-
+        <div class="header__inner">
+            <img class="header__logo" src="{% static 'images/newbw.jpg' %}" alt="iconic view of a books">
+            <h1 class="header__title">Books I.N.F.O</h1>
+            <a id="menu" class="header__menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+                </svg>
+            </a>
+        </div>
+     </header>
     <nav id="drawer" class="nav carbon">
       <ul class="nav__list">
-        <li class="nav__item"><a href="{% url 'index' %}" title="HOME" class="{% if "/" == request.path %}active{% endif %}">Home</a></li>
-        <li class="nav__item"><a href="{% url 'language' %}" class="{% if "/language/" == request.path %}active{% endif %}">Language</a></li>
-        <li class="nav__item"><a href="{% url 'author' %}" class="{% if "/author/" == request.path %}active{% endif %}">Author</a></li>
-        <li class="nav__item" id="all_books"><a href="{% url 'all_books' %}" class="{% if '/all_books/' == request.path %}active{% endif %}">All Books</a></li>
+        <li class="nav__item"><a href="{% url 'index' %}" title="Home" class="{% if "/" == request.path %}active{% endif %}">Home</a></li>
+        <li class="nav__item"><a href="{% url 'language' %}" title="Language" class="{% if "/language/" == request.path %}active{% endif %}">Language</a></li>
+        <li class="nav__item"><a href="{% url 'author' %}" title="Author" class="{% if "/author/" == request.path %}active{% endif %}">Author</a></li>
+        <li class="nav__item" id="all_books"><a href="{% url 'all_books' %}" title="All_Books" class="{% if '/all_books/' == request.path %}active{% endif %}">All Books</a></li>
       </ul>
     </nav>
-
      <div id="mySidenav" class="sidenav stick_side">
-  <a href="{% url 'index' %}" id="about">Home</a>
-  <a href="{% url 'language' %}" id="blog">Languages</a>
-  <a href="{% url 'author' %}" id="projects">Authors</a>
-  <a href="{% url 'all_books' %}" id="contact">All Books</a>
-</div>
-
-
-{% block content %}
-{% endblock %}
+        <a href="{% url 'index' %}" id="Home">Home</a>
+        <a href="{% url 'language' %}" id="Language">Language</a>
+        <a href="{% url 'author' %}" id="Author">Author</a>
+        <a href="{% url 'all_books' %}" id="All_Books">All Books</a>
+     </div>
+    {% block content %}
+    {% endblock %}
       <footer>
         <div class="content_footer">
             <div class="quote"><i class="fa fa-quote-left"></i> Logic will get you from A to B. Imagination will take you everywhere.<i class="fa fa-quote-right"></i>
-                <br><span class="attribution">&mdash; Albert Einstein</span></div>
+            <br><span class="attribution">&mdash; Albert Einstein</span></div>
             <div class="copyright">&copy; 2017, Srinivasa Karthic Ponguru</div>
             <div class="credits">&bull; Developed by Srinivasa Karthic Ponguru &bull;</div>
             <div class="thanks">Thanks for visiting!</div>
         </div>
     </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
  {% block js %}
  {% endblock %}
-
 </body>
 </html>

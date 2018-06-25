@@ -1,28 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
     <main>
-    <div class="search_box">
-    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search Books..." title="Type in a name">
-    </div>
+        <div class="search_box">
+            <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search Books..." title="Type in a name">
+        </div>
     </main>
     <div class="container">
-<ul id="books_ul">
-      {% for book in object_list %}
-<li class="col-md-6 col-lg-4 movie-tile text-center" id="allBooks_show">
-<a href="{% url 'details' book.id %}">
-    <img src="../static/{{ book.imageLink }}" width="220" height="342">
-    <h2 class="h2 all_books_title">{{ book.title }}</h2>
-</a>
-</li>
-    {% endfor %}
-</ul>
-          </div>
-
-            <a href="{% url 'index' %}" class="btn btn-danger btn-sm spacing">
-            Back: Home
-          </a>
-        <a href="#mainHeader" class="btn btn-info btn-sm right_al spacing">
-            Back: Top
-          </a>
-
+        <ul id="books_ul">
+            {% for book in object_list %}
+            <li class="col-md-6 col-lg-4 book-tile text-center" id="allBooks_show">
+                <a href="{% url 'details' book.id %}">
+                    <img src="../static/{{ book.imageLink }}" width="220" height="342">
+                    <h2 class="h2 all_books_title">{{ book.title }}</h2>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="{% url 'index' %}" class="btn btn-danger btn-sm spacing">Back: Home</a>
+    <a href="#mainHeader" class="btn btn-info btn-sm right_al spacing">Back: Top</a>
 {% endblock %}

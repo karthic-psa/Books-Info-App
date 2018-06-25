@@ -5,14 +5,13 @@
 {% endblock %}
 {% block content %}
     <main>
-
-    <h3 id="btitle" class="text-for-header margin-top">{{ books.title }}</h3>
-        <a href="{{ books.link }}" target="_blank"><img id="books_all_Image" class="img-responsive center_img" src="../static/{{ books.imageLink }}" alt="Description of the movie trailer website project"></a>
-            <div class="row">
+        <h3 id="btitle" class="text-for-header margin-top">{{ books.title }}</h3>
+        <a href="{{ books.link }}" target="_blank"><img id="books_all_Image" class="img-responsive center_img" src="../static/{{ books.imageLink }}" alt="{{ books.title }}"></a>
+        <div class="row">
             <div class="col-md-12">
-                <div class="skill-box-margin">
-                    <h3 id="skill" class="text-for-header">About the Book</h3>
-                    <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-inital">
+                <div class="details-box-margin">
+                    <h3 id="details" class="text-for-header">About the Book</h3>
+                    <div class="details card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding details-cardstyle-inital">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Title</h4>
@@ -22,7 +21,7 @@
                              </div>
                         </div>
                     </div>
-                    <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                    <div class="details card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding details-cardstyle-later">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Author</h4>
@@ -32,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                     <div class="details card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding details-cardstyle-later">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Description</h4>
@@ -42,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                     <div class="details card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding details-cardstyle-later">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Language</h4>
@@ -52,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                     <div class="details card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding details-cardstyle-later">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Number of Pages</h4>
@@ -62,7 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                    <div class="details card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding details-cardstyle-later">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Year</h4>
@@ -72,28 +71,20 @@
                             </div>
                         </div>
                     </div>
-                     <div class="skills card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding skill-cardstyle-later">
+                     <div class="details card-style-card card-style-card-2 card-style-section-base card-style-card-base card-padding details-cardstyle-later">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>On Wikipedia</h4>
                             </div>
                             <div class="col-md-8">
-                                <a href="{{ books.link }}" class="btn btn-success btn-sm" target="_blank">
-           Full Book Details
-          </a>
-
+                                <a href="{{ books.link }}" class="btn btn-success btn-sm" target="_blank">Full Book Details</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
-            <a href="{% url 'index' %}" class="btn btn-danger btn-sm spacing">
-            Back: Home
-          </a>
-        <a href="#mainHeader" class="btn btn-info btn-sm right_al spacing">
-            Back: Top
-          </a>
+        </div>
+        <a href="{% url 'index' %}" class="btn btn-danger btn-sm spacing">Back: Home</a>
+        <a href="#mainHeader" class="btn btn-info btn-sm right_al spacing">Back: Top</a>
     </main>
-
 {% endblock %}

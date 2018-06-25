@@ -7,113 +7,114 @@
   display: none;
 }
 
-.hero, .top-books, .must_reads, .recent-books, .english {
+.hero,
+.top-books,
+.must_reads,
+.recent-books,
+.english {
   order: 10;
 }
-@media screen and (max-width: 400px){
 
-}
+@media screen and (max-width: 400px) {}
 
 @media screen and (max-width: 660px) {
-    .header__logo {
-        height: 48px;
-        margin: 0.5em;
-    }
-
-    .header__title {
-        margin-left: 0;
-        font-size: 2em;
-        vertical-align: bottom;
-    }
-
-    .nav {
-        z-index: 10;
-        /*background-color: #fff;*/
-        width: 300px;
-        position: absolute;
-        /* This trasform moves the drawer off canvas. */
-        -webkit-transform: translate(-300px, 0);
-        transform: translate(-300px, 0);
-        /* Optionally, we animate the drawer. */
-        transition: transform 0.3s ease;
-        margin-top: 0px;
-    }
-
-    .nav.open {
-        -webkit-transform: translate(0, 0);
-        transform: translate(0, 0);
-        margin-top: 0px;
-    }
-
-    .nav__item {
-        display: list-item;
-        border-bottom: 1px solid #E0E0E0;
-        width: 100%;
-        text-align: left;
-    }
-
-    .header__menu {
-        display: inline-block;
-        position: absolute;
-        right: 0;
-        padding: 1em;
-    }
-
-    .header__menu svg {
-        width: 32px;
-        fill: #E0E0E0;
-    }
+  .header__logo {
+    height: 48px;
+    margin: 0.5em;
+  }
+  .header__title {
+    margin-left: 0;
+    font-size: 2em;
+    vertical-align: bottom;
+  }
+  .nav {
+    z-index: 10;
+    /*background-color: #fff;*/
+    width: 300px;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+    margin-top: 0px;
+  }
+  .nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    margin-top: 0px;
+  }
+  .nav__item {
+    display: list-item;
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+    text-align: left;
+  }
+  .header__menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 1em;
+  }
+  .header__menu svg {
+    width: 32px;
+    fill: #E0E0E0;
+  }
 }
 
-@media screen and (max-width: 550px){
-div.contain{
-  width: 100%;
-  overflow-x: auto;
+@media screen and (max-width: 550px) {
+  div.contain {
+    width: 100%;
+    overflow-x: auto;
+  }
 }
 
+@media screen and (max-width: 450px) {
+  div.contain {
+    display: none;
+  }
+}
 
-}
-@media screen and (max-width: 450px){
-div.contain{
-  display: none;
-}
-}
-@media screen and (max-width: 720px){
-        .hero {
-        background-image: url("../images/bookshero_small.jpg")
-    }
+@media screen and (max-width: 720px) {
+  .hero {
+    background-image: url("../images/bookshero_small.jpg")
+  }
 }
 
 @media screen and (min-width: 591px) {
-    .hero {
-        order: 0;
-        width: 60%;
-    }
-      .top-books {
+  .hero {
+    order: 0;
+    width: 60%;
+  }
+  .top-books {
     order: 1;
     width: 40%;
   }
 }
+
 @media screen and (min-width: 700px) {
-    .hero {
-        width: 65%;
-    }
-    .top-books {
+  .hero {
+    width: 65%;
+  }
+  .top-books {
     order: 1;
     width: 35%;
   }
-      .must_reads {
+  .must_reads {
     order: 2;
     width: 50%;
   }
-        .english {
+  .english {
     order: 3;
-            width: 50%;
-
+    width: 50%;
   }
 }
+
 @media screen and (min-width: 1140px) {
-  main, .header__inner, .nav, .content {
+  main,
+  .header__inner,
+  .nav,
+  .content {
     width: 1140px;
     margin-left: auto;
     margin-right: auto;

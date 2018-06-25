@@ -1,13 +1,14 @@
 let menu = document.querySelector('#menu');
-      let main = document.querySelector('main');
-      let drawer = document.querySelector('.nav');
-      menu.addEventListener('click', function(e) {
-        drawer.classList.toggle('open');
-        e.stopPropagation();
-      });
-      main.addEventListener('click', function() {
-        drawer.classList.remove('open');
-      });
+let main = document.querySelector('main');
+let drawer = document.querySelector('.nav');
+menu.addEventListener('click', function(e) {
+    drawer.classList.toggle('open');
+    e.stopPropagation();
+});
+main.addEventListener('click', function() {
+    drawer.classList.remove('open');
+});
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -17,7 +18,6 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
-
 }
 
 function showSlides(n) {
@@ -49,46 +49,6 @@ $(document).on("click", ".open_BookDialog", function () {
      $("#myModalLabel").text(booktitle);
      $("#modalImage").attr('src',timgitem);
      $('#book_desc').text(mdesc);
-//     let urlmbooks = "https://www.googleapis.com/books/v1/volumes?q="+booktitle;
-//          let timeoutWiki = setTimeout(function(){
-//       $('#book_desc').text("wikipedia resources not loaded");}, 8000);
-//     $.ajax(urlmbooks,{
-//       dataType: "json",
-//       success: function(response){
-//
-//          let temp = response.items[0].volumeInfo.description;
-//           // console.log(temp);
-//
-//         // let gbooksList = response[1];
-//         // for (let i=0; i< wikiList.length;i++){
-//         //   strWiki = wikiList[i];
-//         //   let link = 'http://en.wikipedia.org/wiki/'+strWiki;
-//           $('#book_desc').text(temp);
-//
-//         // }
-//         clearTimeout(timeoutWiki);
-//       }
-//     });
-//      // $(".open_details").attr('href', "{% url 'details' "+bookid);
-//     // console.log(booktitle);
-//     // console.log(bookid);
-//     let urlgbooks = "https://www.googleapis.com/books/v1/volumes?q="+booktitle;
-//      // As pointed out in comments,
-//      // it is superfluous to have to manually call the modal.
-//      // $('#addBookDialog').modal('show');
-// });
-
-// $(document).on("click", ".open_details", function () {
-//      // let myBookId = $(this).data('id');
-//     let booktitle = $(this).text()
-//      $("#myModalLabel").text(booktitle);
-//     console.log(booktitle)
-//      // As pointed out in comments,
-//      // it is superfluous to have to manually call the modal.
-//      // $('#addBookDialog').modal('show');
-// });
-// $(document).on("click", function () {
-//     $("#myModalLabel").append('');
 });
 
 $(document).ready(function() {
@@ -98,26 +58,16 @@ $(document).ready(function() {
     let urlgbooks = "https://www.googleapis.com/books/v1/volumes?q="+text;
     // let urlWiki = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+text+"&format=json&callback=wikiCallback";
     let timeoutWiki = setTimeout(function(){
-      item.find('p').text("wikipedia resources not loaded");}, 8000);
+    item.find('p').text("wikipedia resources not loaded");}, 8000);
     $.ajax(urlgbooks,{
       dataType: "json",
       success: function(response){
-        // console.log(response)
-          console.log(response)
+          // console.log(response)
          let temp = response.items[0].volumeInfo.description;
-          // console.log(temp);
-
-        // let gbooksList = response[1];
-        // for (let i=0; i< wikiList.length;i++){
-        //   strWiki = wikiList[i];
-        //   let link = 'http://en.wikipedia.org/wiki/'+strWiki;
-          item.find('p').text(temp);
-
-        // }
-        clearTimeout(timeoutWiki);
+         item.find('p').text(temp);
+         clearTimeout(timeoutWiki);
       }
     });
-
   });
 });
 function searchFunction() {
@@ -148,7 +98,6 @@ function searchFunctionLang() {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
-
         }
     }
 }
@@ -169,12 +118,12 @@ function searchFunctionAuth() {
     }
 }
 
-window.addEventListener('scroll', myFunction);
+window.addEventListener('scroll', scrollFunction);
 
 let navbar = document.getElementById("drawer");
 let sticky = navbar.offsetTop;
 let snav = document.getElementById('mySidenav');
-function myFunction() {
+function scrollFunction() {
   if (window.pageYOffset > sticky) {
     snav.classList.remove("stick_side")
   } else {
