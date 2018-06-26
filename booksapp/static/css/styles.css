@@ -361,6 +361,9 @@ img {
   height: 150px;
 }
 
+.right-pad{
+  padding-right: 12px !important;
+}
 
 /* Position the image container (needed to position the left and right arrows) */
 
