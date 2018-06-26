@@ -58,9 +58,9 @@ Visit the site at http://karthic.pythonanywhere.com/ to explore the application.
 4. Now clone or download the github repo to the correct directory
 5. Go ```cd``` to the cloned or downloaded project directory where you will see a manage.py file
 6. Now we need to create and migrate the database Models
-	- In the cmd type and run ```python manage.py migrate tasklistapp```
-	- Then run ```python manage.py makemigration tasklistapp```
-	- Next, ```python manage.py sqlmigrate tasklistapp 0001```
+	- In the cmd type and run ```python manage.py migrate booksapp```
+	- Then run ```python manage.py makemigration booksapp```
+	- Next, ```python manage.py sqlmigrate booksapp 0001```
 	- Finally, run ```python manage.py migrate```
 7. We need to create a Superuser (Administrator) for the django admin panel who can control all aspects of the app and authentication/authorization
 	- Type ```python manage.py createsuperuser```
@@ -72,7 +72,6 @@ Visit the site at http://karthic.pythonanywhere.com/ to explore the application.
 10. Create necessary groups and users as per requirements - auth for people who can access and use our app
 	- Ensure normal users only have ```Active``` permissions check, not admin or superuser status
 11. **Start** using the app by just visitng the localhost or ```http://127.0.0.1:8000/```
-	- Auth for different users vary
 12. Still adding a lot of features and ironing out a few small bugs - ** The App works properly for the provided features **
 
 
