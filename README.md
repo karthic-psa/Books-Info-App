@@ -96,3 +96,4 @@ Visit the site at http://karthic.pythonanywhere.com/ to explore the application.
 	
 2. Followed Test Driven Development (TDD) while building the views. However, need to perform more robust and automated testing to ensure proper functionality (Performed manual testing for the features provided in the application and ensured it works properly)
 
+3. SVG's used taken from codepen.io and svgbackgrounds.com
