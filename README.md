@@ -13,6 +13,10 @@ Visit: http://karthic.pythonanywhere.com/
 5. jQuery - already provided through CDN in project file
 6. SQLite - as the database (already pre-installed with the project on django)
 
+## APIs Used: ##
+
+1. Google Books API
+
 ## Instructions on how to install and run the project: ##
 
 Visit the site at http://karthic.pythonanywhere.com/ to explore the application.
@@ -87,6 +91,7 @@ Visit the site at http://karthic.pythonanywhere.com/ to explore the application.
 
 2. Still working on a few features:
 	- [ ] Ability to add, delete and modify book data
+	- [ ] Need to add **ARIA** attributes that can be used to provide additional information about the semantics of the various elements to assistive technologies like screen readers
 	- [ ] Make a better back-end database model design based on many to may relationships
 	- [ ] More robust url regex handlers to handle various types of user inputs and requests while maintaining logical consistency
 	- [ ] Ability to capture metrics and track usage patterns 
@@ -97,3 +102,7 @@ Visit the site at http://karthic.pythonanywhere.com/ to explore the application.
 2. Followed Test Driven Development (TDD) while building the views. However, need to perform more robust and automated testing to ensure proper functionality (Performed manual testing for the features provided in the application and ensured it works properly)
 
 3. SVG's used taken from codepen.io and svgbackgrounds.com
+
+4. Tried utilizing Wikipedia API, but the results were inconsistant and hence utilized Google Books API - (Some functions in the js files may be named wiki, but later switched to Google Books API - so have to change and rename functions appropriately)
+
+5. Tried image resizing with Grunt and some Grunt packages like 'Image Resize'; however the image resizing was not accurate and inconsistant. Hence, did not utilize them.
